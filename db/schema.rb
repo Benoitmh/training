@@ -26,8 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_155443) do
     t.string "name"
     t.float "price"
     t.text "description"
+    t.integer "owner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_products_on_owner_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -51,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_155443) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "owners"
   add_foreign_key "purchases", "products"
   add_foreign_key "purchases", "users"
 end
