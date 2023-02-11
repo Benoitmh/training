@@ -71,3 +71,4 @@ group :test do
   gem "webdrivers"
 end
 gem "devise"
+gem "simple_form", github: "heartcombo/simple_form"

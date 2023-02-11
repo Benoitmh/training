@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  skip_before_action :authenticate_owner!
+  # skip_before_action :authenticate_owner!
 
   def new
     @product = Product.new

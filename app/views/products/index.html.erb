@@ -1,7 +1,10 @@
 <div class="card">
   <div class="list-products ">
-    <% products.each do |product| %>
+    <% @products.each do |product| %>
+      <p><%= product.price %> €</p>
+      <%= product.name %>
+      <%= product.description %>
       <% link_to product_path(product) %>
-    <% end %>%>
+    <% end %>
   </div>
 </div>
