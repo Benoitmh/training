@@ -1,10 +1,13 @@
-<div class="card">
+<div class="container">
   <div class="list-products ">
     <% @products.each do |product| %>
-      <p><%= product.price %> €</p>
-      <%= product.name %>
-      <%= product.description %>
-      <% link_to product_path(product) %>
+      <div class="card">
+        <%= link_to product_path(product) do %>
+          <%= product.price %><p> €</p>
+          <%= product.name %><br>
+          <%= product.description %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
